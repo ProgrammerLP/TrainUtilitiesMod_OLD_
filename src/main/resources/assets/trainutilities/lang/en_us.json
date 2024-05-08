@@ -1,6 +1,7 @@
 {
   "item.trainutilities.example_item": "Example item",
-  "block.trainutilities.example_block": "example block",
+  "block.trainutilities.platform1_block": "platform 1 block",
+  "block.trainutilities.frameless_glass": "frameless glass",
 
   "itemGroup.trainutilities.trainutils_tab": "Train Utils"
 }

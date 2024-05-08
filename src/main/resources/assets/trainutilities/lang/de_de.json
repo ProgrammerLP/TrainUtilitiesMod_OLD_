@@ -1,6 +1,7 @@
 {
   "item.trainutilities.example_item": "Beipiel Item",
-  "block.trainutilities.example_block": "Beipiel Block",
+  "block.trainutilities.platform1_block": "Gleis 1 Block",
+  "block.trainutilities.frameless_glass": "Randloses Glas",
 
   "itemGroup.trainutilities.trainutils_tab": "Train Utilities"
 }
