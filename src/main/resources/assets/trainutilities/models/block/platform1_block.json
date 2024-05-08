@@ -4,10 +4,9 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "trainutilities:block/platform1_block",
-		"1": "trainutilities:block/platform1_block_side",
+		"1": "trainutilities:block/platform_block_side",
 		"particle": "trainutilities:block/platform1_block"
 	},
-	"render_type": "translucent",
 	"elements": [
 		{
 			"from": [7, 0, 0],
