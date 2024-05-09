@@ -1,22 +1,16 @@
 package net.adeptstack.trainutilities;
 
 import com.mojang.logging.LogUtils;
-import net.adeptstack.trainutilities.Core.ModTabs;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.ItemDescription;
+import com.simibubi.create.foundation.item.KineticStats;
+import com.simibubi.create.foundation.item.TooltipHelper;
+import com.simibubi.create.foundation.item.TooltipModifier;
 import net.adeptstack.trainutilities.Init.BlockInit;
+import net.adeptstack.trainutilities.Init.Blocks.Entities.BlockEntityInit;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -29,12 +23,10 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import static net.adeptstack.trainutilities.Core.ModTabs.CREATIVE_MODE_TABS;
+import static net.adeptstack.trainutilities.Init.ModTabs.CREATIVE_MODE_TABS;
 import static net.adeptstack.trainutilities.Init.BlockInit.BLOCKS;
 import static net.adeptstack.trainutilities.Init.ItemInit.ITEMS;
 
@@ -44,6 +36,7 @@ public class Main {
 
     // Define mod id in a common place for everything to reference
     public static final String MODID = "trainutilities";
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MODID);
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -59,6 +52,8 @@ public class Main {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+        BlockEntityInit.register();
+        BlockInit.register();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
