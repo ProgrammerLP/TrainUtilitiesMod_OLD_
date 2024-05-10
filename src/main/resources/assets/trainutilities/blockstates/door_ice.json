@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trainutilities:block/door_ice"
+    },
+    "facing=east": {
+      "model": "trainutilities:block/door_ice",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "trainutilities:block/door_ice",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "trainutilities:block/door_ice",
+      "y": 270
+    }
+  }
+}

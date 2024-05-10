@@ -1,6 +1,12 @@
 {
   "block.trainutilities.frameless_glass": "frameless glass",
+  "block.trainutilities.top_redline_block": "top redline block",
+  "block.trainutilities.bottom_redline_block": "bottom redline block",
+  "block.trainutilities.leftsloped_redline_block": "left sloped redline block",
+  "block.trainutilities.rightsloped_redline_block": "right sloped redline block",
+
   "block.trainutilities.door_ice": "ICE door",
+
   "block.trainutilities.platform1_block": "platform 1 block",
   "block.trainutilities.platform2_block": "platform 2 block",
   "block.trainutilities.platform3_block": "platform 3 block",

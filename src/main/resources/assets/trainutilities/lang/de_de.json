@@ -1,6 +1,12 @@
 {
   "block.trainutilities.frameless_glass": "Rahmenloses Glas",
+  "block.trainutilities.top_redline_block": "Roter oberer Linien Block",
+  "block.trainutilities.bottom_redline_block": "Roter unterer Linien Block",
+  "block.trainutilities.leftsloped_redline_block": "Roter links geschrägter Linien Block",
+  "block.trainutilities.rightsloped_redline_block": "Roter rechts geschrägter Linien Block",
+
   "block.trainutilities.door_ice": "ICE Tür",
+
   "block.trainutilities.platform1_block": "Gleis 1 Block",
   "block.trainutilities.platform2_block": "Gleis 2 Block",
   "block.trainutilities.platform3_block": "Gleis 3 Block",

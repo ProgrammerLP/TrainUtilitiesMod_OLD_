@@ -5,6 +5,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.adeptstack.trainutilities.Core.TUBuilderTransformers;
 import net.adeptstack.trainutilities.Init.Blocks.PlatformBlockBase;
 import net.adeptstack.trainutilities.Init.Blocks.Doors.TrainSlidingDoorBlockBase;
+import net.adeptstack.trainutilities.Init.Blocks.RedLineBlockBase;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -262,6 +263,42 @@ public class BlockInit {
             .item() // Erstellt ein BlockItem
             .tab(TRAINUTILS_TAB.getKey()) // Fügt deinen Block dem CreativeTab hinzu.
             .build() // Erstellt das Item
+            .register();
+
+    public static final BlockEntry<RedLineBlockBase> TOP_REDLINE_BLOCK = REGISTRATE
+            .block("top_redline_block", RedLineBlockBase::new)
+            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+            .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE))
+            .item()
+            .tab(TRAINUTILS_TAB.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<RedLineBlockBase> BOTTOM_REDLINE_BLOCK = REGISTRATE
+            .block("bottom_redline_block", RedLineBlockBase::new)
+            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+            .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE))
+            .item()
+            .tab(TRAINUTILS_TAB.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<RedLineBlockBase> LEFTSLOPED_REDLINE_BLOCK = REGISTRATE
+            .block("leftsloped_redline_block", RedLineBlockBase::new)
+            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+            .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE))
+            .item()
+            .tab(TRAINUTILS_TAB.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<RedLineBlockBase> RIGHTSLOPED_REDLINE_BLOCK = REGISTRATE
+            .block("rightsloped_redline_block", RedLineBlockBase::new)
+            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+            .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE))
+            .item()
+            .tab(TRAINUTILS_TAB.getKey())
+            .build()
             .register();
 
     //===DOORS===

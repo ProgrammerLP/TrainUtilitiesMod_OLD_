@@ -1,6 +1,7 @@
 package net.adeptstack.trainutilities.Init.Blocks.Doors;
 
 import com.simibubi.create.content.contraptions.ContraptionWorld;
+import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorBlock;
 import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
