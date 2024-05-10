@@ -21,7 +21,5 @@ public class ItemInit {
 
     //===Block Items===
     // Creates a new BlockItem with the id "trainutilities:example_block", combining the namespace and path
-    public static final RegistryObject<Item> PLAT1_BLOCK_ITEM = ITEMS.register("platform1_block", () -> new BlockItem(PLATFORM1_BLOCK.get(), new Item.Properties()));
-    public static final RegistryObject<Item> FRAMELESS_GLASS_BLOCK_ITEM = ITEMS.register("frameless_glass", () -> new BlockItem(FRAMELESS_GLASS.get(), new Item.Properties()));
-    //public static final RegistryObject<Item> DOOR_ICE_BLOCK_ITEM = ITEMS.register("door_ice", () -> new BlockItem(DOOR_ICE.get(), new Item.Properties()));
-}
+    //public static final RegistryObject<Item> FRAMELESS_GLASS_BLOCK_ITEM = ITEMS.register("frameless_glass", () -> new BlockItem(FRAMELESS_GLASS.get(), new Item.Properties()));
+ }

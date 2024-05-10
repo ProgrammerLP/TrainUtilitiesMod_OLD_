@@ -27,7 +27,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 import static net.adeptstack.trainutilities.Init.ModTabs.CREATIVE_MODE_TABS;
-import static net.adeptstack.trainutilities.Init.BlockInit.BLOCKS;
 import static net.adeptstack.trainutilities.Init.ItemInit.ITEMS;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -47,8 +46,6 @@ public class Main {
         modEventBus.addListener(this::commonSetup);
         REGISTRATE.registerEventListeners(modEventBus);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
