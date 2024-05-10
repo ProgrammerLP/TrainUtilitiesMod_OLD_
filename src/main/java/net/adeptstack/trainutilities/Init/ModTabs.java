@@ -18,9 +18,6 @@ public class ModTabs {
     public static final RegistryObject<CreativeModeTab> TRAINUTILS_TAB = CREATIVE_MODE_TABS.register("trainutils_tab", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .title(Component.translatable("itemGroup." + MODID + ".trainutils_tab"))
-            .icon(() -> PLAT1_BLOCK_ITEM.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(PLAT1_BLOCK_ITEM.get());
-                output.accept(FRAMELESS_GLASS_BLOCK_ITEM.get());
-            }).build());
+            //.icon(() -> PLAT1_BLOCK_ITEM.get().getDefaultInstance())
+            .build());
 }

@@ -17,6 +17,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import static com.simibubi.create.AllInteractionBehaviours.interactionBehaviour;
 import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
+import static net.adeptstack.trainutilities.Init.ModTabs.TRAINUTILS_TAB;
 
 public class TUBuilderTransformers {
     public static <B extends TrainSlidingDoorBlockBase, P> NonNullUnaryOperator<BlockBuilder<B, P>> slidingDoor(String type) {
@@ -34,9 +35,9 @@ public class TUBuilderTransformers {
                 .onRegister(interactionBehaviour(new DoorMovingInteraction()))
                 .onRegister(movementBehaviour(new SlidingDoorMovementBehaviour()))
                 .tag(BlockTags.DOORS)
-                .tag(BlockTags.WOODEN_DOORS) // for villager AI
                 .tag(AllTags.AllBlockTags.NON_DOUBLE_DOOR.tag)
                 .item()
+                .tab(TRAINUTILS_TAB.getKey())
                 .tag(ItemTags.DOORS)
                 .tag(AllTags.AllItemTags.CONTRAPTION_CONTROLLED.tag)
                 .model((c, p) -> p.blockSprite(c, p.modLoc("item/door_" + type)))
