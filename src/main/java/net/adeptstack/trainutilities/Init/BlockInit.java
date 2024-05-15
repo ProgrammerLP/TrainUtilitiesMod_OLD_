@@ -305,7 +305,31 @@ public class BlockInit {
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_ICE =
             REGISTRATE.block("door_ice", p -> new TrainSlidingDoorBlockBase(p, false))
                     .transform(TUBuilderTransformers.slidingDoor("ice"))
-                    .properties(p -> p.mapColor(MapColor.TERRACOTTA_CYAN)
+                    .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE)
+                            .sound(SoundType.COPPER)
+                            .noOcclusion())
+                    .register();
+
+    public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_IC2 =
+            REGISTRATE.block("door_ic2", p -> new TrainSlidingDoorBlockBase(p, false))
+                    .transform(TUBuilderTransformers.slidingDoor("ic2"))
+                    .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE)
+                            .sound(SoundType.COPPER)
+                            .noOcclusion())
+                    .register();
+
+    public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_RRX =
+            REGISTRATE.block("door_rrx", p -> new TrainSlidingDoorBlockBase(p, false))
+                    .transform(TUBuilderTransformers.slidingDoor("rrx"))
+                    .properties(p -> p.mapColor(MapColor.COLOR_ORANGE)
+                            .sound(SoundType.COPPER)
+                            .noOcclusion())
+                    .register();
+
+    public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_FLIRT =
+            REGISTRATE.block("door_flirt", p -> new TrainSlidingDoorBlockBase(p, false))
+                    .transform(TUBuilderTransformers.slidingDoor("flirt"))
+                    .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GREEN)
                             .sound(SoundType.COPPER)
                             .noOcclusion())
                     .register();

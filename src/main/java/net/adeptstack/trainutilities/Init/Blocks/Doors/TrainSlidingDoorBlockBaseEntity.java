@@ -17,7 +17,7 @@ import java.util.List;
 
 public class TrainSlidingDoorBlockBaseEntity extends SlidingDoorBlockEntity {
 
-    LerpedFloat animation;
+    public LerpedFloat animation;
     int bridgeTicks;
     boolean deferUpdate;
 
