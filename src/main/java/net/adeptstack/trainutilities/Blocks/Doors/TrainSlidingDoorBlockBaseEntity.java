@@ -1,4 +1,4 @@
-package net.adeptstack.trainutilities.Init.Blocks.Doors;
+package net.adeptstack.trainutilities.Blocks.Doors;
 
 import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;

@@ -6,12 +6,11 @@ import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorMovementBeh
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
-import net.adeptstack.trainutilities.Init.Blocks.Doors.TrainSlidingDoorBlockBase;
+import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.client.model.generators.ModelFile;
 
 import static com.simibubi.create.AllInteractionBehaviours.interactionBehaviour;

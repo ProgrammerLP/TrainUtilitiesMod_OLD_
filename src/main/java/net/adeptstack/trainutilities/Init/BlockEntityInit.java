@@ -1,9 +1,8 @@
-package net.adeptstack.trainutilities.Init.Blocks.Entities;
+package net.adeptstack.trainutilities.Init;
 
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
-import net.adeptstack.trainutilities.Init.BlockInit;
-import net.adeptstack.trainutilities.Init.Blocks.Doors.TrainSlidingDoorBlockBaseEntity;
-import net.adeptstack.trainutilities.Init.Blocks.Doors.TrainSlidingDoorBlockBaseRenderer;
+import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBaseEntity;
+import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBaseRenderer;
 
 import static net.adeptstack.trainutilities.Main.REGISTRATE;
 

@@ -1,11 +1,10 @@
-package net.adeptstack.trainutilities.Init.Blocks.Doors;
+package net.adeptstack.trainutilities.Blocks.Doors;
 
 import com.simibubi.create.content.contraptions.ContraptionWorld;
-import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorBlock;
 import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
-import net.adeptstack.trainutilities.Init.Blocks.Entities.BlockEntityInit;
+import net.adeptstack.trainutilities.Init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;

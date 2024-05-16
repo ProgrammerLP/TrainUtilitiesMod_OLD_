@@ -2,14 +2,9 @@ package net.adeptstack.trainutilities;
 
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.foundation.item.KineticStats;
-import com.simibubi.create.foundation.item.TooltipHelper;
-import com.simibubi.create.foundation.item.TooltipModifier;
 import net.adeptstack.trainutilities.Init.BlockInit;
-import net.adeptstack.trainutilities.Init.Blocks.Entities.BlockEntityInit;
+import net.adeptstack.trainutilities.Init.BlockEntityInit;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;

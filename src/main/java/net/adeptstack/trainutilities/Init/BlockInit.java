@@ -1,20 +1,14 @@
 package net.adeptstack.trainutilities.Init;
 
-import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.adeptstack.trainutilities.Core.TUBuilderTransformers;
-import net.adeptstack.trainutilities.Init.Blocks.PlatformBlockBase;
-import net.adeptstack.trainutilities.Init.Blocks.Doors.TrainSlidingDoorBlockBase;
-import net.adeptstack.trainutilities.Init.Blocks.RedLineBlockBase;
+import net.adeptstack.trainutilities.Blocks.PlatformBlockBase;
+import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
+import net.adeptstack.trainutilities.Blocks.RedLineBlockBase;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import static net.adeptstack.trainutilities.Init.ModTabs.TRAINUTILS_TAB;
-import static net.adeptstack.trainutilities.Main.MODID;
 import static net.adeptstack.trainutilities.Main.REGISTRATE;
 
 public class BlockInit {
@@ -300,6 +294,15 @@ public class BlockInit {
             .tab(TRAINUTILS_TAB.getKey())
             .build()
             .register();
+
+//    public static final BlockEntry<SignBlock> STATIONNAME_SIGN_BLOCK = REGISTRATE
+//            .block("stationname_sign_block", SignBlock::new)
+//            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+//            .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE))
+//            .item()
+//            .tab(TRAINUTILS_TAB.getKey())
+//            .build()
+//            .register();
 
     //===DOORS===
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_ICE =
