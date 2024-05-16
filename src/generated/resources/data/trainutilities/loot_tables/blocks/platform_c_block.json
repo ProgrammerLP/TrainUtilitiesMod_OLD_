@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "trainutilities:platform_c_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "trainutilities:blocks/platform_c_block"
+}

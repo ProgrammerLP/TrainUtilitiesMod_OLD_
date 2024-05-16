@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "trainutilities:door_ice"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "trainutilities:blocks/door_ice"
+}
