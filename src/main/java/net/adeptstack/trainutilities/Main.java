@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.adeptstack.trainutilities.Init.BlockInit;
 import net.adeptstack.trainutilities.Init.BlockEntityInit;
+import net.adeptstack.trainutilities.Init.InteractionBehaviourInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -47,6 +48,7 @@ public class Main {
         CREATIVE_MODE_TABS.register(modEventBus);
         BlockEntityInit.register();
         BlockInit.register();
+        InteractionBehaviourInit.registerDefaults();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
