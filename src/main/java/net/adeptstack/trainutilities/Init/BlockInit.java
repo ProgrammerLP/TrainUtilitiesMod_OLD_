@@ -1,7 +1,6 @@
 package net.adeptstack.trainutilities.Init;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
-import net.adeptstack.trainutilities.Core.TUBuilderTransformers;
 import net.adeptstack.trainutilities.Blocks.PlatformBlockBase;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
 import net.adeptstack.trainutilities.Blocks.RedLineBlockBase;
@@ -295,47 +294,18 @@ public class BlockInit {
             .build()
             .register();
 
-//    public static final BlockEntry<SignBlock> STATIONNAME_SIGN_BLOCK = REGISTRATE
-//            .block("stationname_sign_block", SignBlock::new)
-//            .initialProperties(() -> Blocks.WHITE_CONCRETE)
-//            .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE))
-//            .item()
-//            .tab(TRAINUTILS_TAB.getKey())
-//            .build()
-//            .register();
-
     //===DOORS===
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_ICE =
-            REGISTRATE.block("door_ice", p -> new TrainSlidingDoorBlockBase(p, false))
-                    .transform(TUBuilderTransformers.slidingDoor("ice"))
-                    .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE)
-                            .sound(SoundType.COPPER)
-                            .noOcclusion())
-                    .register();
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ice", MapColor.TERRACOTTA_WHITE);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_IC2 =
-            REGISTRATE.block("door_ic2", p -> new TrainSlidingDoorBlockBase(p, false))
-                    .transform(TUBuilderTransformers.slidingDoor("ic2"))
-                    .properties(p -> p.mapColor(MapColor.TERRACOTTA_WHITE)
-                            .sound(SoundType.COPPER)
-                            .noOcclusion())
-                    .register();
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ic2", MapColor.TERRACOTTA_WHITE);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_RRX =
-            REGISTRATE.block("door_rrx", p -> new TrainSlidingDoorBlockBase(p, false))
-                    .transform(TUBuilderTransformers.slidingDoor("rrx"))
-                    .properties(p -> p.mapColor(MapColor.COLOR_ORANGE)
-                            .sound(SoundType.COPPER)
-                            .noOcclusion())
-                    .register();
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("rrx", MapColor.TERRACOTTA_GRAY);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_FLIRT =
-            REGISTRATE.block("door_flirt", p -> new TrainSlidingDoorBlockBase(p, false))
-                    .transform(TUBuilderTransformers.slidingDoor("flirt"))
-                    .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GREEN)
-                            .sound(SoundType.COPPER)
-                            .noOcclusion())
-                    .register();
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("flirt", MapColor.TERRACOTTA_GREEN);
 
     public static void register() { }
 }

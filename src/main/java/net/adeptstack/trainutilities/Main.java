@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.adeptstack.trainutilities.Init.BlockInit;
 import net.adeptstack.trainutilities.Init.BlockEntityInit;
-import net.adeptstack.trainutilities.Init.InteractionBehaviourInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,17 +37,14 @@ public class Main {
     public Main() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         REGISTRATE.registerEventListeners(modEventBus);
 
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
-        CREATIVE_MODE_TABS.register(modEventBus);
-        BlockEntityInit.register();
         BlockInit.register();
-        InteractionBehaviourInit.registerDefaults();
+        BlockEntityInit.register();
+        //ITEMS.register(modEventBus);
+        CREATIVE_MODE_TABS.register(modEventBus);
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

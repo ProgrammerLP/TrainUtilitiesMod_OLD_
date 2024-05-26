@@ -1,9 +1,8 @@
-package net.adeptstack.trainutilities.Core.Contraptions.Behaviour;
+package net.adeptstack.trainutilities.Blocks.Behaviour;
 
 import com.simibubi.create.content.contraptions.Contraption;
-
+import com.simibubi.create.content.contraptions.behaviour.SimpleBlockMovingInteraction;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
@@ -14,9 +13,9 @@ import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureBlockInfo;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-public class DoorMovingInteraction extends SimpleBlockMovingInteraction {
+public class TrainSlidingDoorMovingInteraction extends SimpleBlockMovingInteraction {
 
     @Override
     protected BlockState handle(Player player, Contraption contraption, BlockPos pos, BlockState currentState) {
@@ -28,11 +27,11 @@ public class DoorMovingInteraction extends SimpleBlockMovingInteraction {
                 : trainDoor ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.WOODEN_DOOR_OPEN;
 
         BlockPos otherPos = currentState.getValue(DoorBlock.HALF) == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
-        StructureBlockInfo info = contraption.getBlocks()
+        StructureTemplate.StructureBlockInfo info = contraption.getBlocks()
                 .get(otherPos);
         if (info.state().hasProperty(DoorBlock.OPEN)) {
             BlockState newState = info.state().cycle(DoorBlock.OPEN);
-            setContraptionBlockData(contraption.entity, otherPos, new StructureBlockInfo(info.pos(), newState, info.nbt()));
+            setContraptionBlockData(contraption.entity, otherPos, new StructureTemplate.StructureBlockInfo(info.pos(), newState, info.nbt()));
         }
 
         currentState = currentState.cycle(DoorBlock.OPEN);
@@ -44,7 +43,7 @@ public class DoorMovingInteraction extends SimpleBlockMovingInteraction {
                 Direction facing = currentState.getValue(TrainSlidingDoorBlockBase.FACING);
                 BlockPos doublePos =
                         pos.relative(hinge == DoorHingeSide.LEFT ? facing.getClockWise() : facing.getCounterClockWise());
-                StructureBlockInfo doubleInfo = contraption.getBlocks()
+                StructureTemplate.StructureBlockInfo doubleInfo = contraption.getBlocks()
                         .get(doublePos);
                 if (doubleInfo != null && TrainSlidingDoorBlockBase.isDoubleDoor(currentState, hinge, facing, doubleInfo.state()))
                     handlePlayerInteraction(null, InteractionHand.MAIN_HAND, doublePos, contraption.entity);
@@ -62,5 +61,4 @@ public class DoorMovingInteraction extends SimpleBlockMovingInteraction {
     protected boolean updateColliders() {
         return true;
     }
-
 }
