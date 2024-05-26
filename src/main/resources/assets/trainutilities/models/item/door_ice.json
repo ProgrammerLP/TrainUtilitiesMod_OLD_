@@ -1,3 +1,6 @@
 {
-  "parent": "trainutilities:block/door_ice"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "trainutilities:item/door_ice"
+  }
 }
