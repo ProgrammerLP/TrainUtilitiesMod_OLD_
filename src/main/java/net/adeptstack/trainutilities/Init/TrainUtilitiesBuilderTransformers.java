@@ -33,6 +33,7 @@ public class TrainUtilitiesBuilderTransformers {
                 .onRegister(interactionBehaviour(new TrainSlidingDoorMovingInteraction()))
                 .onRegister(movementBehaviour(new TrainSlidingDoorMovementBehaviour()))
                 .item()
+                .tab(ModTabs.TRAINUTILS_TAB.getKey())
                 .build();
     }
 
