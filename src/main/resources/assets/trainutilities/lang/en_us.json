@@ -6,6 +6,9 @@
   "block.trainutilities.rightsloped_redline_block": "right sloped redline block",
 
   "block.trainutilities.door_ice": "ICE door",
+  "block.trainutilities.door_ic2": "IC2 door",
+  "block.trainutilities.door_rrx": "RRX door",
+  "block.trainutilities.door_flirt": "Stadler Flirt 3 XL door",
 
   "block.trainutilities.platform1_block": "platform 1 block",
   "block.trainutilities.platform2_block": "platform 2 block",

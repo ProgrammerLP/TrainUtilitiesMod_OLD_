@@ -6,6 +6,9 @@
   "block.trainutilities.rightsloped_redline_block": "Roter rechts geschrägter Linien Block",
 
   "block.trainutilities.door_ice": "ICE Tür",
+  "block.trainutilities.door_ic2": "IC2 Tür",
+  "block.trainutilities.door_rrx": "RRX Tür",
+  "block.trainutilities.door_flirt": "Stadler Flirt 3 XL Tür",
 
   "block.trainutilities.platform1_block": "Gleis 1 Block",
   "block.trainutilities.platform2_block": "Gleis 2 Block",
