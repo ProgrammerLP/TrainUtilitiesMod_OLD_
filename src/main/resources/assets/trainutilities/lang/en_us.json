@@ -33,6 +33,7 @@
   "block.trainutilities.platform_e_block": "platform division E block",
   "block.trainutilities.platform_f_block": "platform division F block",
   "block.trainutilities.platform_to_block": "platform to block",
+  "block.trainutilities.empty_platform_block": "empty platform block",
 
   "advancement.trainutilities.platform_block": "Modern Age",
   "advancement.trainutilities.platform_block.description": "Receive a platform block",

@@ -33,6 +33,7 @@
   "block.trainutilities.platform_e_block": "Gleis Unterteilung E Block",
   "block.trainutilities.platform_f_block": "Gleis Unterteilung F Block",
   "block.trainutilities.platform_to_block": "Gleis Bis Block",
+  "block.trainutilities.empty_platform_block": "Leerer Gleis Block",
 
   "advancement.trainutilities.platform_block": "Modernes Zeitalter",
   "advancement.trainutilities.platform_block.description": "Bekomme einen Plattformblock",

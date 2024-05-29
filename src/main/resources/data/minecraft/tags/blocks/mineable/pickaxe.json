@@ -32,6 +32,7 @@
     "trainutilities:platform_d_block",
     "trainutilities:platform_e_block",
     "trainutilities:platform_f_block",
-    "trainutilities:platform_to_block"
+    "trainutilities:platform_to_block",
+    "trainutilities:empty_platform_block"
   ]
 }

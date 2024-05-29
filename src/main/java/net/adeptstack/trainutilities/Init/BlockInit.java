@@ -243,6 +243,16 @@ public class BlockInit {
             .build() 
             .register();
 
+    public static final BlockEntry<PlatformBlockBase> EMPTY_PLATFORM_BLOCK = REGISTRATE
+            .block("empty_platform_block", PlatformBlockBase::new)
+            .initialProperties(() -> Blocks.IRON_BARS)
+            .properties(p -> p.mapColor(MapColor.NONE)
+                    .sound(SoundType.METAL))
+            .item()
+            .tab(TRAINUTILS_TAB.getKey())
+            .build()
+            .register();
+
     //===BUILDING BLOCKS===
     public static final BlockEntry<GlassBlock> FRAMELESS_GLASS = REGISTRATE
             .block("frameless_glass", GlassBlock::new) 
