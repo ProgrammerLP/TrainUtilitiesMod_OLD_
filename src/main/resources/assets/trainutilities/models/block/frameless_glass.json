@@ -4,5 +4,5 @@
   "textures": {
     "all": "trainutilities:block/frameless_glass"
   },
-  "render_type": "translucent"
+  "render_type": "cutout"
 }
