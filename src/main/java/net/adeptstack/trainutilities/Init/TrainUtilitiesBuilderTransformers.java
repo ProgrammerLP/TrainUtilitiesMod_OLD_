@@ -45,13 +45,4 @@ public class TrainUtilitiesBuilderTransformers {
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .register();
     }
-
-    private static boolean never(BlockState p_235436_0_, BlockGetter p_235436_1_, BlockPos p_235436_2_) {
-        return false;
-    }
-
-    private static Boolean never(BlockState p_235427_0_, BlockGetter p_235427_1_, BlockPos p_235427_2_,
-                                 EntityType<?> p_235427_3_) {
-        return false;
-    }
 }

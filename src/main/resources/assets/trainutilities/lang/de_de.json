@@ -34,5 +34,10 @@
   "block.trainutilities.platform_f_block": "Gleis Unterteilung F Block",
   "block.trainutilities.platform_to_block": "Gleis Bis Block",
 
+  "advancement.trainutilities.platform_block": "Modernes Zeitalter",
+  "advancement.trainutilities.platform_block.description": "Bekomme einen Plattformblock",
+  "advancement.trainutilities.doors": "Ist das die Realität?",
+  "advancement.trainutilities.doors.description": "Bekomme eine der neuen TrainUtilities Türen",
+
   "itemGroup.trainutilities.trainutils_tab": "Train Utilities"
 }
