@@ -14,6 +14,7 @@ import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour
 import com.simibubi.create.foundation.utility.animation.LerpedFloat;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBaseEntity;
+import net.adeptstack.trainutilities.Init.SoundInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
@@ -63,7 +64,7 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
 
         if (!wasSettled && sdbe.animation.settled() && !open)
             context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
-                    SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, .125f, 1, false);
+                    SoundInit.DOOR_ICE_CLOSE.get(), SoundSource.BLOCKS, .125f, 1, false);
     }
 
     protected void tickOpen(MovementContext context, boolean currentlyOpen) {
@@ -84,7 +85,7 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
         toggleDoor(pos, contraption, info);
 
         if (shouldOpen)
-            context.world.playSound(null, BlockPos.containing(context.position), SoundEvents.IRON_DOOR_OPEN,
+            context.world.playSound(null, BlockPos.containing(context.position), SoundInit.DOOR_ICE_OPEN.get(),
                     SoundSource.BLOCKS, .125f, 1);
     }
 
