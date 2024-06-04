@@ -59,12 +59,16 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
         if (!(tes.get(context.localPos) instanceof TrainSlidingDoorBlockBaseEntity sdbe))
             return;
         boolean wasSettled = sdbe.animation.settled();
-        sdbe.animation.chase(open ? 1 : 0, .15f, LerpedFloat.Chaser.LINEAR);
+        sdbe.animation.chase(open ? 1 : 0, .04f, LerpedFloat.Chaser.LINEAR);
         sdbe.animation.tickChaser();
 
-        if (!wasSettled && sdbe.animation.settled() && !open)
+        if (wasSettled && !sdbe.animation.settled() && !open)
             context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
-                    SoundInit.DOOR_ICE_CLOSE.get(), SoundSource.BLOCKS, .125f, 1, false);
+                    SoundInit.DOOR_ICE_CLOSE.get(), SoundSource.BLOCKS, 1f, 1, false);
+
+        if (wasSettled && !sdbe.animation.settled() && open)
+            context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
+                    SoundInit.DOOR_ICE_OPEN.get(), SoundSource.BLOCKS, 1f, 1, false);
     }
 
     protected void tickOpen(MovementContext context, boolean currentlyOpen) {
@@ -86,7 +90,7 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
 
         if (shouldOpen)
             context.world.playSound(null, BlockPos.containing(context.position), SoundInit.DOOR_ICE_OPEN.get(),
-                    SoundSource.BLOCKS, .125f, 1);
+                    SoundSource.BLOCKS, 1f, 1);
     }
 
     private void toggleDoor(BlockPos pos, Contraption contraption, StructureTemplate.StructureBlockInfo info) {
