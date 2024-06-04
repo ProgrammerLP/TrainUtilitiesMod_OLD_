@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.adeptstack.trainutilities.Init.BlockInit;
 import net.adeptstack.trainutilities.Init.BlockEntityInit;
+import net.adeptstack.trainutilities.Init.SoundInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -44,6 +45,7 @@ public class Main {
         BlockEntityInit.register();
         //ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
+        SoundInit.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in
