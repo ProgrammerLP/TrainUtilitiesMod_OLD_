@@ -302,16 +302,16 @@ public class BlockInit {
 
     //===DOORS===
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_ICE =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ice", MapColor.TERRACOTTA_WHITE, SoundEvents.ENDER_CHEST_OPEN, SoundInit.DOOR_ICE_CLOSE.get(), .04f);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ice", MapColor.TERRACOTTA_WHITE);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_IC2 =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ic2", MapColor.TERRACOTTA_WHITE, SoundEvents.IRON_DOOR_OPEN, SoundEvents.IRON_DOOR_CLOSE, .5f);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ic2", MapColor.TERRACOTTA_WHITE);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_RRX =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("rrx", MapColor.TERRACOTTA_GRAY, SoundEvents.SHULKER_OPEN, SoundEvents.SHULKER_CLOSE, .35f);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("rrx", MapColor.TERRACOTTA_GRAY);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_FLIRT =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("flirt", MapColor.TERRACOTTA_GREEN, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, .1f);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("flirt", MapColor.TERRACOTTA_GREEN);
 
     public static void register() { }
 }
