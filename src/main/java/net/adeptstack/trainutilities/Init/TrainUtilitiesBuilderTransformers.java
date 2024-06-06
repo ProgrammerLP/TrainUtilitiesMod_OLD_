@@ -30,12 +30,11 @@ public class TrainUtilitiesBuilderTransformers {
     private static final CreateRegistrate REGISTRATE = Main.REGISTRATE.setCreativeTab(ModTabs.TRAINUTILS_TAB);
 
     public static <B extends TrainSlidingDoorBlockBase, P> NonNullUnaryOperator<BlockBuilder<B, P>> slidingDoor(String type) {
-        TrainSlidingDoorProperties doorProps = GetSlidingDoorProperties(type);
         return b -> b.initialProperties(() -> Blocks.OAK_DOOR) // for villager AI..
                 .properties(p -> p.strength(3.0F, 6.0F))
                 .addLayer(() -> RenderType::cutout)
                 .onRegister(interactionBehaviour(new TrainSlidingDoorMovingInteraction()))
-                .onRegister(movementBehaviour(new TrainSlidingDoorMovementBehaviour(doorProps.GetOpen(), doorProps.GetClose(), doorProps.GetSpeed())))
+                .onRegister(movementBehaviour(new TrainSlidingDoorMovementBehaviour(type)))
                 .item()
                 .tab(ModTabs.TRAINUTILS_TAB.getKey())
                 .build();
@@ -50,21 +49,21 @@ public class TrainUtilitiesBuilderTransformers {
                 .register();
     }
 
-    static TrainSlidingDoorProperties GetSlidingDoorProperties(String type) {
-//        if (type == "ice") {
-//            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .04f);
-//        }
-//        else if (type == "ic2") {
-//            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .04f);
-//        }
-//        else if (type == "rrx") {
-//            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .04f);
-//        }
-//        else if (type == "flirt") {
-//            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .04f);
-//        }
-//        else {
+    public static TrainSlidingDoorProperties GetSlidingDoorProperties(String type) {
+        if (type == "ice") {
+            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .04f);
+        }
+        else if (type == "ic2") {
+            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .025f);
+        }
+        else if (type == "rrx") {
+            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .06f);
+        }
+        else if (type == "flirt") {
+            return new TrainSlidingDoorProperties(SoundInit.DOOR_ICE_OPEN.get(), SoundInit.DOOR_ICE_CLOSE.get(), .01f);
+        }
+        else {
             return new TrainSlidingDoorProperties(SoundEvents.IRON_DOOR_OPEN, SoundEvents.IRON_DOOR_CLOSE, .15f);
-        //}
+        }
     }
 }

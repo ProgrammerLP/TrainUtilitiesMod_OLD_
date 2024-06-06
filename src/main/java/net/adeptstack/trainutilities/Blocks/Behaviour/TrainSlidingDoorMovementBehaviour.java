@@ -15,6 +15,7 @@ import com.simibubi.create.foundation.utility.animation.LerpedFloat;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBaseEntity;
 import net.adeptstack.trainutilities.Init.SoundInit;
+import net.adeptstack.trainutilities.Init.TrainUtilitiesBuilderTransformers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
@@ -36,14 +37,11 @@ import java.util.Map;
 
 public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
 
-    public SoundEvent doorOpen = SoundEvents.IRON_DOOR_OPEN;
-    public SoundEvent doorClose = SoundEvents.IRON_DOOR_CLOSE;
-    public float speed = .03f;
+    TrainSlidingDoorProperties tsdp;
+    String type;
 
-    public TrainSlidingDoorMovementBehaviour(SoundEvent open, SoundEvent close, float speed) {
-        this.doorOpen = open;
-        this.doorClose = close;
-        this.speed = speed;
+    public TrainSlidingDoorMovementBehaviour(String type) {
+        this.type = type;
     }
 
     @Override
@@ -67,21 +65,24 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
         if (!context.world.isClientSide())
             tickOpen(context, open);
 
+        if (tsdp == null) {
+            tsdp = TrainUtilitiesBuilderTransformers.GetSlidingDoorProperties(type);
+        }
+
         Map<BlockPos, BlockEntity> tes = context.contraption.presentBlockEntities;
         if (!(tes.get(context.localPos) instanceof TrainSlidingDoorBlockBaseEntity sdbe))
             return;
         boolean wasSettled = sdbe.animation.settled();
-        sdbe.animation.chase(open ? 1 : 0, speed, LerpedFloat.Chaser.LINEAR);
+        sdbe.animation.chase(open ? 1 : 0, tsdp.GetSpeed(), LerpedFloat.Chaser.LINEAR);
         sdbe.animation.tickChaser();
-
 
         if (wasSettled && !sdbe.animation.settled() && !open)
             context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
-                    doorClose, SoundSource.BLOCKS, 1f, 1, false);
+                    tsdp.GetClose(), SoundSource.BLOCKS, 1f, 1, false);
 
         if (wasSettled && !sdbe.animation.settled() && open)
             context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
-                    doorOpen, SoundSource.BLOCKS, 1f, 1, false);
+                    tsdp.GetOpen(), SoundSource.BLOCKS, 1f, 1, false);
     }
 
     protected void tickOpen(MovementContext context, boolean currentlyOpen) {
@@ -101,9 +102,9 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
 
         toggleDoor(pos, contraption, info);
 
-        if (shouldOpen)
-            context.world.playSound(null, BlockPos.containing(context.position), SoundInit.DOOR_ICE_OPEN.get(),
-                    SoundSource.BLOCKS, 1f, 1);
+//        if (shouldOpen)
+//            context.world.playSound(null, BlockPos.containing(context.position), SoundInit.DOOR_ICE_OPEN.get(),
+//                    SoundSource.BLOCKS, 1f, 1);
     }
 
     private void toggleDoor(BlockPos pos, Contraption contraption, StructureTemplate.StructureBlockInfo info) {
