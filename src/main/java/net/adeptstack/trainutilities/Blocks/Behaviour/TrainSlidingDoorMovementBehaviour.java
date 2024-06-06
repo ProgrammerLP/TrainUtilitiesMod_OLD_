@@ -20,6 +20,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
@@ -34,6 +35,17 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 
 public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
+
+    public SoundEvent doorOpen = SoundEvents.IRON_DOOR_OPEN;
+    public SoundEvent doorClose = SoundEvents.IRON_DOOR_CLOSE;
+    public float speed = .03f;
+
+    public TrainSlidingDoorMovementBehaviour(SoundEvent open, SoundEvent close, float speed) {
+        this.doorOpen = open;
+        this.doorClose = close;
+        this.speed = speed;
+    }
+
     @Override
     public boolean renderAsNormalBlockEntity() {
         return true;
@@ -59,16 +71,17 @@ public class TrainSlidingDoorMovementBehaviour implements MovementBehaviour {
         if (!(tes.get(context.localPos) instanceof TrainSlidingDoorBlockBaseEntity sdbe))
             return;
         boolean wasSettled = sdbe.animation.settled();
-        sdbe.animation.chase(open ? 1 : 0, .04f, LerpedFloat.Chaser.LINEAR);
+        sdbe.animation.chase(open ? 1 : 0, speed, LerpedFloat.Chaser.LINEAR);
         sdbe.animation.tickChaser();
+
 
         if (wasSettled && !sdbe.animation.settled() && !open)
             context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
-                    SoundInit.DOOR_ICE_CLOSE.get(), SoundSource.BLOCKS, 1f, 1, false);
+                    doorClose, SoundSource.BLOCKS, 1f, 1, false);
 
         if (wasSettled && !sdbe.animation.settled() && open)
             context.world.playLocalSound(context.position.x, context.position.y, context.position.z,
-                    SoundInit.DOOR_ICE_OPEN.get(), SoundSource.BLOCKS, 1f, 1, false);
+                    doorOpen, SoundSource.BLOCKS, 1f, 1, false);
     }
 
     protected void tickOpen(MovementContext context, boolean currentlyOpen) {

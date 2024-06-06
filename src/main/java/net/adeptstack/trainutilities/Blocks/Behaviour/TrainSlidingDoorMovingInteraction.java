@@ -3,6 +3,7 @@ package net.adeptstack.trainutilities.Blocks.Behaviour;
 import com.simibubi.create.content.contraptions.Contraption;
 import com.simibubi.create.content.contraptions.behaviour.SimpleBlockMovingInteraction;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
+import net.adeptstack.trainutilities.Init.SoundInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
@@ -23,8 +24,8 @@ public class TrainSlidingDoorMovingInteraction extends SimpleBlockMovingInteract
             return currentState;
 
         boolean trainDoor = currentState.getBlock() instanceof TrainSlidingDoorBlockBase;
-        SoundEvent sound = currentState.getValue(DoorBlock.OPEN) ? trainDoor ? null : SoundEvents.WOODEN_DOOR_CLOSE
-                : trainDoor ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.WOODEN_DOOR_OPEN;
+//        SoundEvent sound = currentState.getValue(DoorBlock.OPEN) ? trainDoor ? null : SoundInit.DOOR_ICE_CLOSE.get()
+//                : trainDoor ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.WOODEN_DOOR_OPEN;
 
         BlockPos otherPos = currentState.getValue(DoorBlock.HALF) == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
         StructureTemplate.StructureBlockInfo info = contraption.getBlocks()
@@ -50,8 +51,8 @@ public class TrainSlidingDoorMovingInteraction extends SimpleBlockMovingInteract
             }
 
             float pitch = player.level().random.nextFloat() * 0.1F + 0.9F;
-            if (sound != null)
-                playSound(player, sound, pitch);
+//            if (sound != null)
+//                playSound(player, sound, pitch);
         }
 
         return currentState;

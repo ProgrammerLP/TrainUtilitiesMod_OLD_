@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class TrainSlidingDoorBlockBaseEntity extends SlidingDoorBlockEntity {
 
+
     public LerpedFloat animation;
     public TrainSlidingDoorBlockBaseEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);

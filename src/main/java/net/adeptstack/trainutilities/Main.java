@@ -39,14 +39,10 @@ public class Main {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
-        REGISTRATE.registerEventListeners(modEventBus);
-
-        BlockInit.register();
-        BlockEntityInit.register();
-        //ITEMS.register(modEventBus);
-        CREATIVE_MODE_TABS.register(modEventBus);
         SoundInit.register(modEventBus);
-
+        CREATIVE_MODE_TABS.register(modEventBus);
+        //ITEMS.register(modEventBus);
+        REGISTRATE.registerEventListeners(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -56,6 +52,9 @@ public class Main {
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+//        BlockInit.register();
+//        BlockEntityInit.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

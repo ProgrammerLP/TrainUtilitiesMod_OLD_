@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.adeptstack.trainutilities.Blocks.PlatformBlockBase;
 import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
 import net.adeptstack.trainutilities.Blocks.RedLineBlockBase;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 
@@ -301,16 +302,16 @@ public class BlockInit {
 
     //===DOORS===
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_ICE =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ice", MapColor.TERRACOTTA_WHITE);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ice", MapColor.TERRACOTTA_WHITE, SoundEvents.ENDER_CHEST_OPEN, SoundInit.DOOR_ICE_CLOSE.get(), .04f);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_IC2 =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ic2", MapColor.TERRACOTTA_WHITE);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("ic2", MapColor.TERRACOTTA_WHITE, SoundEvents.IRON_DOOR_OPEN, SoundEvents.IRON_DOOR_CLOSE, .5f);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_RRX =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("rrx", MapColor.TERRACOTTA_GRAY);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("rrx", MapColor.TERRACOTTA_GRAY, SoundEvents.SHULKER_OPEN, SoundEvents.SHULKER_CLOSE, .35f);
 
     public static final BlockEntry<TrainSlidingDoorBlockBase> DOOR_FLIRT =
-            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("flirt", MapColor.TERRACOTTA_GREEN);
+            TrainUtilitiesBuilderTransformers.TrainSlidingDoor("flirt", MapColor.TERRACOTTA_GREEN, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, .1f);
 
     public static void register() { }
 }

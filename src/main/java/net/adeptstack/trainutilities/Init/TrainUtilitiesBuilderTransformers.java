@@ -12,6 +12,7 @@ import net.adeptstack.trainutilities.Blocks.Doors.TrainSlidingDoorBlockBase;
 import net.adeptstack.trainutilities.Main;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -26,22 +27,22 @@ import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
 public class TrainUtilitiesBuilderTransformers {
     private static final CreateRegistrate REGISTRATE = Main.REGISTRATE.setCreativeTab(ModTabs.TRAINUTILS_TAB);
 
-    public static <B extends TrainSlidingDoorBlockBase, P> NonNullUnaryOperator<BlockBuilder<B, P>> slidingDoor(String type) {
+    public static <B extends TrainSlidingDoorBlockBase, P> NonNullUnaryOperator<BlockBuilder<B, P>> slidingDoor(String type, SoundEvent open, SoundEvent close, float speed) {
         return b -> b.initialProperties(() -> Blocks.OAK_DOOR) // for villager AI..
                 .properties(p -> p.strength(3.0F, 6.0F))
                 .addLayer(() -> RenderType::cutout)
                 .onRegister(interactionBehaviour(new TrainSlidingDoorMovingInteraction()))
-                .onRegister(movementBehaviour(new TrainSlidingDoorMovementBehaviour()))
+                .onRegister(movementBehaviour(new TrainSlidingDoorMovementBehaviour(open, close, speed)))
                 .item()
                 .tab(ModTabs.TRAINUTILS_TAB.getKey())
                 .build();
     }
 
-    public static BlockEntry<TrainSlidingDoorBlockBase> TrainSlidingDoor(String type, MapColor colour) {
+    public static BlockEntry<TrainSlidingDoorBlockBase> TrainSlidingDoor(String type, MapColor colour, SoundEvent open, SoundEvent close, float speed) {
         return REGISTRATE.block("door_" + type, TrainSlidingDoorBlockBase::new)
                 .initialProperties(AllBlocks.FRAMED_GLASS_DOOR)
                 .properties(p -> p.sound(SoundType.GLASS).mapColor(colour))
-                .transform(TrainUtilitiesBuilderTransformers.slidingDoor(type))
+                .transform(TrainUtilitiesBuilderTransformers.slidingDoor(type, open, close, speed))
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .register();
     }
